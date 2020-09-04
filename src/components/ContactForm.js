@@ -19,7 +19,7 @@ const ContactForm = () => {
         <div>
           <label htmlFor="firstName">First Name*</label>
           <input
-          id="firstName"
+          
             name="firstName"
             placeholder="Edd"
             onChange={event => handleChange(event)}
