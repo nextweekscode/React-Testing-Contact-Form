@@ -3,21 +3,25 @@ import { render, fireEvent, screen} from '@testing-library/react'
 import ContactForm from './ContactForm'
 
 test(' the contact form',  () => {
-    render(<ContactForm/>)
+    const { container} = render(<ContactForm/>)
+
 
     const fnInput = screen.getByPlaceholderText(/edd/i)
-    expect(fnInput).toBeTruthy()
-    fireEvent.change(fnInput, {target: {value : 'Ashton'}})
-
     const lnInput = screen.getByPlaceholderText(/burke/i)
-    expect(lnInput).toBeTruthy()
-    fireEvent.change(lnInput, {target : { value: 'Turner'}})
-
     const emInput = screen.getByPlaceholderText(/bluebill1049@hotmail.com/i)
+    const msgInput = screen.getByPlaceholderText(/enter message here.../i)
+    const subBtn = container.querySelector("input[type=submit]")
+
+    expect(fnInput).toBeTruthy()
+    expect(lnInput).toBeTruthy()
     expect(emInput).toBeTruthy()
-    fireEvent.change(emInput, {target : { value: 'ash.com'}})
+    expect(msgInput).toBeTruthy()
+    expect(subBtn).toBeTruthy()
+    
+    fireEvent.change(fnInput, {target: {value : 'Ashton'}})
+    fireEvent.change(lnInput, {target : { value: 'Turner'}})
+})
 
-
-   
+test('can type in fields and submit form', () => {
 
 })

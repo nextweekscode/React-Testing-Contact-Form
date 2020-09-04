@@ -56,7 +56,7 @@ const ContactForm = () => {
           )}
         </div>
         <div>
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message" placeholder="enter message here...">Message</label>
           <textarea name="message" 
           onChange={event => handleChange(event)}
           ref={register({ required: false })} />
